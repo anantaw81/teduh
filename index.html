@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teduh - Ruang Damai & Kesehatan Mental</title>
+    <meta name="description" content="Temukan ketenangan, cerita inspiratif, panduan bernapas, dan ruang untuk merefleksikan diri di Teduh. Anda tidak sendirian.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Glow Elements -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <header class="app-header">
+        <div class="header-container">
+            <div class="logo" id="logo-button">
+                <span class="logo-icon"><i data-lucide="compass"></i></span>
+                <span class="logo-text">Teduh</span>
+            </div>
+            
+            <nav class="main-nav">
+                <button class="nav-link active" data-tab="home" id="nav-home">
+                    <i data-lucide="home"></i> <span>Beranda</span>
+                </button>
+                <button class="nav-link" data-tab="breathing" id="nav-breathing">
+                    <i data-lucide="wind"></i> <span>Bernapas</span>
+                </button>
+                <button class="nav-link" data-tab="quotes" id="nav-quotes">
+                    <i data-lucide="heart"></i> <span>Kutipan</span>
+                </button>
+                <button class="nav-link" data-tab="stories" id="nav-stories">
+                    <i data-lucide="book-open"></i> <span>Cerita</span>
+                </button>
+                <button class="nav-link" data-tab="books" id="nav-books">
+                    <i data-lucide="library"></i> <span>Buku</span>
+                </button>
+                <button class="nav-link" data-tab="journal" id="nav-journal">
+                    <i data-lucide="pen-tool"></i> <span>Jurnal</span>
+                </button>
+            </nav>
+
+            <div class="header-actions">
+                <!-- Ambient Sound Player -->
+                <div class="ambient-player" id="ambient-player-widget">
+                    <button class="btn-icon" id="ambient-sound-toggle" title="Suara Latar Penenang">
+                        <i data-lucide="volume-x" id="ambient-icon"></i>
+                    </button>
+                    <div class="ambient-dropdown" id="ambient-dropdown">
+                        <p class="dropdown-title">Suara Alam (Sintetis)</p>
+                        <div class="ambient-options">
+                            <button class="ambient-opt-btn" data-sound="rain" id="ambient-opt-rain">
+                                <i data-lucide="cloud-rain"></i> Hujan Rintik
+                            </button>
+                            <button class="ambient-opt-btn" data-sound="ocean" id="ambient-opt-ocean">
+                                <i data-lucide="waves"></i> Ombak Pantai
+                            </button>
+                            <button class="ambient-opt-btn" data-sound="forest" id="ambient-opt-forest">
+                                <i data-lucide="trees"></i> Desau Angin
+                            </button>
+                        </div>
+                        <div class="volume-slider-container">
+                            <i data-lucide="volume-1"></i>
+                            <input type="range" id="ambient-volume" min="0" max="1" step="0.05" value="0.5">
+                        </div>
+                    </div>
+                </div>
+                <!-- Theme Toggle (Bonus Premium Touch) -->
+                <button class="btn-icon" id="theme-toggle" title="Ubah Tema">
+                    <i data-lucide="moon" id="theme-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-content">
+        <!-- HOME SECTION -->
+        <section id="section-home" class="content-section active">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <span class="badge" id="time-badge">Selamat Pagi</span>
+                    <h1 class="hero-title" id="main-greeting">Tarik napas dalam-dalam, <br>Anda tidak sendirian.</h1>
+                    <p class="hero-subtitle">Teduh adalah tempat beristirahat sejenak untuk menenangkan pikiran, membaca kisah-kisah penuh harapan, dan merawat kesehatan mental Anda hari ini.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" id="hero-start-breathing">
+                            <i data-lucide="wind"></i> Mulai Bernapas
+                        </button>
+                        <button class="btn btn-secondary" id="hero-read-quote">
+                            <i data-lucide="sparkles"></i> Cari Inspirasi
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image-container">
+                    <div class="glass-card image-wrapper">
+                        <img src="assets/hero_calm.png" alt="Ilustrasi Ketenangan" class="hero-image" id="hero-illustration">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Cards Dashboard -->
+            <div class="features-grid">
+                <div class="glass-card feature-card clickable" data-target="breathing" id="feat-breathing">
+                    <div class="feature-icon bg-icon-blue">
+                        <i data-lucide="wind"></i>
+                    </div>
+                    <h3>Ruang Bernapas</h3>
+                    <p>Latihan pernapasan terpandu untuk membantu meredakan kecemasan dan kepanikan dalam 1 menit.</p>
+                    <span class="card-action">Mulai <i data-lucide="chevron-right"></i></span>
+                </div>
+
+                <div class="glass-card feature-card clickable" data-target="quotes" id="feat-quotes">
+                    <div class="feature-icon bg-icon-purple">
+                        <i data-lucide="heart"></i>
+                    </div>
+                    <h3>Kutipan Harian</h3>
+                    <p>Dek kartu kutipan terpilih dari para pemikir dan penyair dunia untuk memeluk jiwamu hari ini.</p>
+                    <span class="card-action">Buka Kartu <i data-lucide="chevron-right"></i></span>
+                </div>
+
+                <div class="glass-card feature-card clickable" data-target="journal" id="feat-journal">
+                    <div class="feature-icon bg-icon-green">
+                        <i data-lucide="pen-tool"></i>
+                    </div>
+                    <h3>Jurnal Refleksi</h3>
+                    <p>Ekspresikan perasaanmu di tempat aman. Catat suasana hatimu tanpa takut dihakimi siapa pun.</p>
+                    <span class="card-action">Mulai Menulis <i data-lucide="chevron-right"></i></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- BREATHING SECTION -->
+        <section id="section-breathing" class="content-section">
+            <div class="section-header text-center">
+                <span class="badge">Relaksasi</span>
+                <h2>Latihan Pernapasan Terpandu</h2>
+                <p class="section-desc text-center">Metode <i>Box Breathing</i> (4-4-4-4) digunakan oleh profesional untuk menenangkan sistem saraf.</p>
+            </div>
+
+            <div class="breathing-container glass-card">
+                <div class="breath-visualizer-wrapper">
+                    <!-- Dynamic Glowing Circle -->
+                    <div class="breath-circle-outer" id="breath-circle-outer">
+                        <div class="breath-circle-inner" id="breath-circle-inner"></div>
+                    </div>
+                    <div class="breath-instruction" id="breath-instruction">Siap untuk Memulai?</div>
+                    <div class="breath-timer" id="breath-timer">00</div>
+                </div>
+
+                <div class="breath-controls">
+                    <button class="btn btn-outline" id="breath-btn-setup" style="display:none;">
+                        <i data-lucide="settings"></i> Atur Ulang
+                    </button>
+                    <button class="btn btn-primary btn-large" id="breath-btn-trigger">
+                        <i data-lucide="play" id="breath-play-icon"></i> <span id="breath-btn-text">Mulai Latihan</span>
+                    </button>
+                </div>
+
+                <div class="breath-guidance-steps">
+                    <div class="step-card active" id="breath-step-in">
+                        <span class="step-num">1</span>
+                        <h4>Tarik (4s)</h4>
+                        <p>Hirup udara perlahan melalui hidung.</p>
+                    </div>
+                    <div class="step-card" id="breath-step-hold1">
+                        <span class="step-num">2</span>
+                        <h4>Tahan (4s)</h4>
+                        <p>Tahan napas Anda di dalam dada dengan rileks.</p>
+                    </div>
+                    <div class="step-card" id="breath-step-out">
+                        <span class="step-num">3</span>
+                        <h4>Hembuskan (4s)</h4>
+                        <p>Lepaskan udara perlahan melalui mulut.</p>
+                    </div>
+                    <div class="step-card" id="breath-step-hold2">
+                        <span class="step-num">4</span>
+                        <h4>Kosongkan (4s)</h4>
+                        <p>Tahan napas dengan kondisi paru-paru kosong.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUOTES SECTION -->
+        <section id="section-quotes" class="content-section">
+            <div class="section-header">
+                <span class="badge">Inspirasi Harian</span>
+                <h2>Sentuhan Kata Penyejuk Jiwa</h2>
+                <p class="section-desc">Klik atau geser kartu untuk mendapatkan kutipan menenangkan yang baru.</p>
+            </div>
+
+            <div class="quotes-card-container">
+                <div class="quote-card glass-card" id="quote-card">
+                    <div class="quote-icon-top"><i data-lucide="quote"></i></div>
+                    <div class="quote-text-content">
+                        <p class="quote-body" id="quote-text">"Kemarin saya pintar, jadi saya ingin mengubah dunia. Hari ini saya bijaksana, jadi saya mengubah diri saya sendiri."</p>
+                        <cite class="quote-author" id="quote-author">Rumi</cite>
+                    </div>
+                    <div class="quote-card-footer">
+                        <button class="btn-icon" id="quote-btn-copy" title="Salin Kutipan">
+                            <i data-lucide="copy"></i>
+                        </button>
+                        <button class="btn-icon" id="quote-btn-favorite" title="Simpan ke Favorit">
+                            <i data-lucide="heart"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="quotes-actions">
+                    <button class="btn btn-primary" id="btn-next-quote">
+                        <i data-lucide="sparkles"></i> Kutipan Berikutnya
+                    </button>
+                </div>
+            </div>
+
+            <!-- Saved Quotes Drawer -->
+            <div class="saved-quotes-wrapper glass-card">
+                <h3><i data-lucide="heart" class="text-pink"></i> Kutipan Tersimpan Anda</h3>
+                <div class="saved-quotes-list" id="saved-quotes-list">
+                    <p class="empty-state">Belum ada kutipan yang disimpan. Klik ikon hati pada kartu untuk menyimpan.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- STORIES SECTION -->
+        <section id="section-stories" class="content-section">
+            <div class="section-header">
+                <span class="badge">Cerita Motivasi</span>
+                <h2>Kisah tentang Harapan & Ketahanan</h2>
+                <p class="section-desc">Membaca cerita singkat tentang mengatasi badai kehidupan dan berdamai dengan diri sendiri.</p>
+            </div>
+
+            <div class="stories-grid" id="stories-grid">
+                <!-- Will be dynamically generated by JS -->
+            </div>
+        </section>
+
+        <!-- BOOKS SECTION -->
+        <section id="section-books" class="content-section">
+            <div class="section-header">
+                <span class="badge">Perpustakaan Jiwa</span>
+                <h2>Rekomendasi Buku Kesehatan Mental</h2>
+                <p class="section-desc">Buku-buku terpilih untuk membantumu memahami diri, mengelola emosi, dan melangkah perlahan.</p>
+            </div>
+
+            <div class="books-grid" id="books-grid">
+                <!-- Will be dynamically generated by JS -->
+            </div>
+        </section>
+
+        <!-- JOURNAL SECTION -->
+        <section id="section-journal" class="content-section">
+            <div class="section-header">
+                <span class="badge">Catatan Sanubari</span>
+                <h2>Jurnal Refleksi Pribadi</h2>
+                <p class="section-desc">Ekspresikan semua pikiran dan emosimu secara bebas. Data disimpan dengan aman di perangkat lokal Anda.</p>
+            </div>
+
+            <div class="journal-wrapper">
+                <!-- Form entry -->
+                <div class="journal-form-container glass-card">
+                    <h3>Tulis Hari Ini</h3>
+                    <form id="journal-form">
+                        <div class="mood-selector">
+                            <label>Bagaimana suasana hatimu saat ini?</label>
+                            <div class="mood-options">
+                                <button type="button" class="mood-btn" data-mood="tenang" title="Tenang">
+                                    <span class="mood-emoji">😌</span><span>Tenang</span>
+                                </button>
+                                <button type="button" class="mood-btn" data-mood="lelah" title="Lelah">
+                                    <span class="mood-emoji">🥱</span><span>Lelah</span>
+                                </button>
+                                <button type="button" class="mood-btn" data-mood="cemas" title="Cemas/Kuatir">
+                                    <span class="mood-emoji">😰</span><span>Cemas</span>
+                                </button>
+                                <button type="button" class="mood-btn" data-mood="sedih" title="Sedih">
+                                    <span class="mood-emoji">😢</span><span>Sedih</span>
+                                </button>
+                                <button type="button" class="mood-btn" data-mood="senang" title="Senang/Syukur">
+                                    <span class="mood-emoji">😊</span><span>Senang</span>
+                                </button>
+                            </div>
+                            <input type="hidden" id="selected-mood" value="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="journal-title">Judul Refleksi (Opsional)</label>
+                            <input type="text" id="journal-title" placeholder="Tulis judul kecil untuk hari ini...">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="journal-content">Apa yang sedang berkecamuk di pikiranmu? (Atau tulis hal yang kamu syukuri hari ini)</label>
+                            <textarea id="journal-content" rows="6" placeholder="Tuliskan di sini tanpa batasan, lepaskan semuanya..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" id="journal-submit-btn">
+                            <i data-lucide="save"></i> Simpan Catatan
+                        </button>
+                    </form>
+                </div>
+
+                <!-- History list and Mood insights -->
+                <div class="journal-history-container">
+                    <!-- Mood statistics summary -->
+                    <div class="glass-card mood-insights" id="mood-insights-card">
+                        <h3><i data-lucide="bar-chart-3"></i> Analisis Suasana Hatimu</h3>
+                        <div class="mood-stats-visual" id="mood-stats-visual">
+                            <p class="empty-state">Tulis entri jurnal pertamamu untuk melihat pola suasana hati.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card journal-history">
+                        <h3><i data-lucide="history"></i> Riwayat Catatan</h3>
+                        <div class="journal-list" id="journal-list">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- STORY MODAL (Distraction-free Reader) -->
+    <div class="modal-overlay" id="story-modal">
+        <div class="modal-card glass-card">
+            <button class="modal-close" id="modal-close-btn" title="Tutup">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-scroll-content">
+                <div class="modal-header">
+                    <span class="badge" id="modal-story-category">Kisah Nyata</span>
+                    <h2 id="modal-story-title">Judul Cerita</h2>
+                    <div class="modal-meta">
+                        <i data-lucide="clock"></i> <span id="modal-story-read-time">3 mnt membaca</span>
+                    </div>
+                </div>
+                <hr class="modal-divider">
+                <div class="modal-body" id="modal-story-body">
+                    <!-- Dynamic story content -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="progress-container">
+                    <div class="progress-bar" id="modal-progress-bar"></div>
+                </div>
+                <div class="footer-actions">
+                    <p class="footer-tip">Tarik napas dalam-dalam setelah selesai membaca.</p>
+                    <button class="btn btn-primary btn-small" id="modal-close-action">Selesai Membaca</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert / Toast Notifications -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <footer class="app-footer-bar">
+        <div class="footer-bar-content">
+            <div class="footer-brand">
+                <h3>Teduh</h3>
+                <p>Tempat tenang untuk bernapas dan menemukan harapan baru.</p>
+            </div>
+            <div class="footer-contacts">
+                <p class="contact-title"><i data-lucide="heart-handshake" class="text-pink"></i> Butuh bantuan darurat?</p>
+                <p>Jika Anda atau orang terdekat berada dalam situasi krisis kesehatan mental, silakan hubungi:</p>
+                <div class="contact-numbers">
+                    <a href="tel:119" class="contact-link"><i data-lucide="phone"></i> 119 (Kemenkes RI Ext 8)</a>
+                    <a href="https://www.intothelightid.org" target="_blank" rel="noopener noreferrer" class="contact-link"><i data-lucide="external-link"></i> Into The Light Indonesia (Komunitas Pencegahan Bunuh Diri)</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 Teduh. Dibuat dengan penuh rasa peduli untuk menemani langkah Anda.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
